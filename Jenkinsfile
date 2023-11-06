@@ -2,7 +2,6 @@ pipeline {
 	agent any
 	environment {
 		DOCKER_LOGIN=credentials('DOCKER_LOGIN')
-		DATABASE_URI=credentials()
 	}
 	stages { 
 		stage('Test') {
