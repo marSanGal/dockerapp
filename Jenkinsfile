@@ -12,11 +12,11 @@ pipeline {
 		}
 		stage('Build') {
 			steps {
-				sh 'docker stop dockerapp/app1'
-				sh 'docker rm dockerapp/app1'
-				sh 'dockerbuild -t dockerapp/app1'
+				sh 'docker stop app1'
+				sh 'docker rm app1'
+				sh 'dockerbuild -t marSanGal/app1'
 				sh 'docker login -u ${DOCKER_LOGIN_USR} -p ${DOCKER_LOGIN_PSW}'
-				sh 'docker push dockerapp/app1'
+				sh 'docker push marSanGal/app1'
 			}
 		}
 		stage('Deploy') {
