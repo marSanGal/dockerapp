@@ -11,8 +11,8 @@ pipeline {
 		}
 		stage('Build') {
 			steps {
-				// sh 'docker stop app1'
-				// sh 'docker rm app1'
+				sh 'docker stop app1'
+				sh 'docker rm app1'
 				sh 'docker build -t marsangal/app1 .'
 				sh 'docker login -u ${DOCKER_LOGIN_USR} -p ${DOCKER_LOGIN_PSW}'
 				sh 'docker push marsangal/app1'
